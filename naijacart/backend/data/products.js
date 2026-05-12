@@ -1,0 +1,207 @@
+const products = [
+  // Food & Groceries
+  {
+    id: "1",
+    name: "Ofada Rice (5kg)",
+    category: "Food & Groceries",
+    price: 8500,
+    originalPrice: 10000,
+    description: "Premium locally grown Ofada rice from Ogun State. Rich aroma, perfect for Ofada stew.",
+    image: "https://images.unsplash.com/photo-1586201375761-83865001e31c?w=400&q=80",
+    rating: 4.8,
+    reviews: 234,
+    stock: 50,
+    badge: "Local",
+    seller: "FarmFresh NG"
+  },
+  {
+    id: "2",
+    name: "Indomie Noodles (40 packs)",
+    category: "Food & Groceries",
+    price: 7200,
+    originalPrice: 8000,
+    description: "The classic Nigerian favourite. Indomie instant noodles carton — variety pack of all flavours.",
+    image: "https://images.unsplash.com/photo-1569718212165-3a8278d5f624?w=400&q=80",
+    rating: 4.9,
+    reviews: 1204,
+    stock: 200,
+    badge: "Bestseller",
+    seller: "NaijaGrocery"
+  },
+  {
+    id: "3",
+    name: "Palm Oil (5 Litres)",
+    category: "Food & Groceries",
+    price: 6500,
+    originalPrice: 7500,
+    description: "Premium unrefined red palm oil sourced directly from Nigerian palm plantations.",
+    image: "https://images.unsplash.com/photo-1474979266404-7eaacbcd87c5?w=400&q=80",
+    rating: 4.7,
+    reviews: 389,
+    stock: 80,
+    badge: "Local",
+    seller: "FarmFresh NG"
+  },
+  {
+    id: "4",
+    name: "Ogbono Seeds (500g)",
+    category: "Food & Groceries",
+    price: 3200,
+    originalPrice: 4000,
+    description: "High-quality ground ogbono seeds for authentic Nigerian ogbono soup.",
+    image: "https://images.unsplash.com/photo-1585032226651-759b368d7246?w=400&q=80",
+    rating: 4.6,
+    reviews: 156,
+    stock: 120,
+    badge: null,
+    seller: "SpiceHouse NG"
+  },
+  // Fashion
+  {
+    id: "5",
+    name: "Ankara Wrap Dress",
+    category: "Fashion",
+    price: 15000,
+    originalPrice: 22000,
+    description: "Handcrafted Ankara fabric wrap dress. Bold patterns, vibrant colours. Sizes S–3XL available.",
+    image: "https://images.unsplash.com/photo-1594938298603-c8148c4dae35?w=400&q=80",
+    rating: 4.9,
+    reviews: 87,
+    stock: 30,
+    badge: "Handmade",
+    seller: "Adire Studio Lagos"
+  },
+  {
+    id: "6",
+    name: "Agbada Set (3-piece)",
+    category: "Fashion",
+    price: 45000,
+    originalPrice: 60000,
+    description: "Premium embroidered Agbada set — includes outer robe, inner shirt, and trousers. Occasions and ceremonies.",
+    image: "https://images.unsplash.com/photo-1539109136881-3be0616acf4b?w=400&q=80",
+    rating: 4.8,
+    reviews: 62,
+    stock: 15,
+    badge: "Premium",
+    seller: "Lagos Couture"
+  },
+  {
+    id: "7",
+    name: "Leather Sandals (Aba Made)",
+    category: "Fashion",
+    price: 9500,
+    originalPrice: 12000,
+    description: "Handcrafted genuine leather sandals from Aba artisans. Durable, comfortable, and stylish.",
+    image: "https://images.unsplash.com/photo-1603487742131-4160ec999306?w=400&q=80",
+    rating: 4.5,
+    reviews: 210,
+    stock: 45,
+    badge: "Aba Made",
+    seller: "AbaLeather Co."
+  },
+  // Electronics
+  {
+    id: "8",
+    name: "Tecno Spark 20 Pro",
+    category: "Electronics",
+    price: 185000,
+    originalPrice: 210000,
+    description: "6.78\" AMOLED display, 256GB storage, 50MP AI camera, 5000mAh battery. Perfect for Nigerian users.",
+    image: "https://images.unsplash.com/photo-1511707171634-5f897ff02aa9?w=400&q=80",
+    rating: 4.4,
+    reviews: 445,
+    stock: 25,
+    badge: "Hot Deal",
+    seller: "TechHub Lagos"
+  },
+  {
+    id: "9",
+    name: "Rechargeable Standing Fan",
+    category: "Electronics",
+    price: 28000,
+    originalPrice: 35000,
+    description: "18-inch rechargeable fan with 8-hour battery backup. Essential for Nigerian power outages.",
+    image: "https://images.unsplash.com/photo-1558618666-fcd25c85cd64?w=400&q=80",
+    rating: 4.7,
+    reviews: 892,
+    stock: 60,
+    badge: "Bestseller",
+    seller: "PowerHome NG"
+  },
+  {
+    id: "10",
+    name: "Solar Power Bank (30000mAh)",
+    category: "Electronics",
+    price: 22000,
+    originalPrice: 28000,
+    description: "Heavy-duty solar power bank with dual USB output. Charge phones and tablets during blackouts.",
+    image: "https://images.unsplash.com/photo-1609091839311-d5365f9ff1c5?w=400&q=80",
+    rating: 4.5,
+    reviews: 320,
+    stock: 40,
+    badge: "NEPA Proof",
+    seller: "SolarTech NG"
+  },
+  // Beauty & Health
+  {
+    id: "11",
+    name: "Shea Butter (Pure, 500g)",
+    category: "Beauty & Health",
+    price: 4500,
+    originalPrice: 6000,
+    description: "100% unrefined raw shea butter sourced from Northern Nigeria. Moisturises skin and hair.",
+    image: "https://images.unsplash.com/photo-1571781926291-c477ebfd024b?w=400&q=80",
+    rating: 4.9,
+    reviews: 678,
+    stock: 100,
+    badge: "Organic",
+    seller: "Kano Naturals"
+  },
+  {
+    id: "12",
+    name: "Black Soap (Dudu-Osun)",
+    category: "Beauty & Health",
+    price: 2500,
+    originalPrice: 3000,
+    description: "Authentic Nigerian black soap with turmeric, honey, and shea butter. Clears skin naturally.",
+    image: "https://images.unsplash.com/photo-1612817288484-6f916006741a?w=400&q=80",
+    rating: 4.7,
+    reviews: 1100,
+    stock: 150,
+    badge: "Natural",
+    seller: "Dudu NG"
+  },
+  // Home & Kitchen
+  {
+    id: "13",
+    name: "Pressure Cooker (6L)",
+    category: "Home & Kitchen",
+    price: 18500,
+    originalPrice: 24000,
+    description: "Stainless steel 6-litre pressure cooker. Cuts cooking time in half — perfect for beans and tough meats.",
+    image: "https://images.unsplash.com/photo-1585515320310-259814833e62?w=400&q=80",
+    rating: 4.6,
+    reviews: 234,
+    stock: 35,
+    badge: "Kitchen Essential",
+    seller: "KitchenPlus NG"
+  },
+  {
+    id: "14",
+    name: "Mortar & Pestle (Odo Set)",
+    category: "Home & Kitchen",
+    price: 7500,
+    originalPrice: 10000,
+    description: "Traditional hardwood Nigerian odo mortar and pestle set. Perfect for pounding yam and spices.",
+    image: "https://images.unsplash.com/photo-1614224561074-41d6ef26d6b7?w=400&q=80",
+    rating: 4.8,
+    reviews: 156,
+    stock: 20,
+    badge: "Handcrafted",
+    seller: "Heritage Crafts NG"
+  }
+];
+
+const categories = ["All", "Food & Groceries", "Fashion", "Electronics", "Beauty & Health", "Home & Kitchen"];
+
+module.exports = { products, categories };
