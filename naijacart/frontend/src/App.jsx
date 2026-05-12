@@ -1,6 +1,7 @@
 import { Routes, Route } from 'react-router-dom';
 import { AuthProvider } from './context/AuthContext';
 import { CartProvider } from './context/CartContext';
+import Navbar from './components/Navbar';
 
 // Simple fallback components
 const SimpleHome = () => (
@@ -8,13 +9,8 @@ const SimpleHome = () => (
     <h1 style={{ color: '#008751' }}>🛒 NaijaCart</h1>
     <p>Nigerian E-Commerce Platform</p>
     <p>Home page loaded successfully!</p>
+    <p>Real Navbar is now loaded!</p>
   </div>
-);
-
-const SimpleNavbar = () => (
-  <nav style={{ background: '#008751', color: 'white', padding: '15px 20px' }}>
-    <h2>NaijaCart</h2>
-  </nav>
 );
 
 const SimpleFooter = () => (
@@ -28,7 +24,7 @@ export default function App() {
     <AuthProvider>
       <CartProvider>
         <div style={{ display: 'flex', flexDirection: 'column', minHeight: '100vh' }}>
-          <SimpleNavbar />
+          <Navbar />
           <main style={{ flex: 1 }}>
             <Routes>
               <Route path="/" element={<SimpleHome />} />
