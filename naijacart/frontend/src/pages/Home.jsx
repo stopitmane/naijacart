@@ -51,18 +51,51 @@ export default function Home() {
         <div style={{ maxWidth: 1200, margin: '0 auto', textAlign: 'center' }}>
           <h2 style={{ fontSize: 26, fontWeight: 800, color: '#1F2937', marginBottom: 28 }}>Shop by Category</h2>
           <div style={{ display: 'grid', gridTemplateColumns: 'repeat(auto-fit, minmax(160px, 1fr))', gap: 16 }}>
-            <div style={{ background: '#FEF3C7', borderRadius: 12, padding: '24px 16px', textAlign: 'center' }}>
-              <span style={{ fontSize: 36 }}>🥘</span>
-              <p style={{ fontWeight: 700, fontSize: 13, color: '#1F2937', margin: '10px 0 0 0' }}>Food & Groceries</p>
-            </div>
-            <div style={{ background: '#FCE7F3', borderRadius: 12, padding: '24px 16px', textAlign: 'center' }}>
-              <span style={{ fontSize: 36 }}>👗</span>
-              <p style={{ fontWeight: 700, fontSize: 13, color: '#1F2937', margin: '10px 0 0 0' }}>Fashion</p>
-            </div>
-            <div style={{ background: '#DBEAFE', borderRadius: 12, padding: '24px 16px', textAlign: 'center' }}>
-              <span style={{ fontSize: 36 }}>📱</span>
-              <p style={{ fontWeight: 700, fontSize: 13, color: '#1F2937', margin: '10px 0 0 0' }}>Electronics</p>
-            </div>
+            <a href="/shop?category=Food%20%26%20Groceries" style={{ 
+              background: '#FEF3C7', 
+              borderRadius: 12, 
+              padding: '24px 16px', 
+              textAlign: 'center',
+              textDecoration: 'none',
+              display: 'block',
+              transition: 'transform 0.2s',
+              cursor: 'pointer'
+            }}
+            onMouseEnter={e => e.currentTarget.style.transform = 'translateY(-4px)'}
+            onMouseLeave={e => e.currentTarget.style.transform = 'translateY(0)'}>
+              <span style={{ fontSize: 36, display: 'block', marginBottom: 10 }}>🥘</span>
+              <p style={{ fontWeight: 700, fontSize: 13, color: '#1F2937', margin: 0 }}>Food & Groceries</p>
+            </a>
+            <a href="/shop?category=Fashion" style={{ 
+              background: '#FCE7F3', 
+              borderRadius: 12, 
+              padding: '24px 16px', 
+              textAlign: 'center',
+              textDecoration: 'none',
+              display: 'block',
+              transition: 'transform 0.2s',
+              cursor: 'pointer'
+            }}
+            onMouseEnter={e => e.currentTarget.style.transform = 'translateY(-4px)'}
+            onMouseLeave={e => e.currentTarget.style.transform = 'translateY(0)'}>
+              <span style={{ fontSize: 36, display: 'block', marginBottom: 10 }}>👗</span>
+              <p style={{ fontWeight: 700, fontSize: 13, color: '#1F2937', margin: 0 }}>Fashion</p>
+            </a>
+            <a href="/shop?category=Electronics" style={{ 
+              background: '#DBEAFE', 
+              borderRadius: 12, 
+              padding: '24px 16px', 
+              textAlign: 'center',
+              textDecoration: 'none',
+              display: 'block',
+              transition: 'transform 0.2s',
+              cursor: 'pointer'
+            }}
+            onMouseEnter={e => e.currentTarget.style.transform = 'translateY(-4px)'}
+            onMouseLeave={e => e.currentTarget.style.transform = 'translateY(0)'}>
+              <span style={{ fontSize: 36, display: 'block', marginBottom: 10 }}>📱</span>
+              <p style={{ fontWeight: 700, fontSize: 13, color: '#1F2937', margin: 0 }}>Electronics</p>
+            </a>
           </div>
         </div>
       </section>

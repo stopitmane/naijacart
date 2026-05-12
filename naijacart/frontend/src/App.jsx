@@ -193,7 +193,7 @@ const SimpleFooter = () => (
     <div style={{ maxWidth: '1200px', margin: '0 auto', textAlign: 'center' }}>
       <div style={{ marginBottom: '20px' }}>
         <h3 style={{ color: '#FCD34D', fontSize: '24px', fontWeight: '800', marginBottom: '10px' }}>
-          🛒 NaijaCart
+          🛒 groovyjwttp
         </h3>
         <p style={{ color: '#9CA3AF', fontSize: '14px', marginBottom: '20px' }}>
           Nigeria's premier online marketplace for authentic local products
@@ -209,7 +209,7 @@ const SimpleFooter = () => (
       
       <div style={{ borderTop: '1px solid #374151', paddingTop: '20px' }}>
         <p style={{ color: '#6B7280', fontSize: '12px' }}>
-          © 2026 NaijaCart. All rights reserved. Made with ❤️ for Nigeria.
+          © 2026 groovyjwttp. All rights reserved. Made with ❤️ for Nigeria.
         </p>
       </div>
     </div>
