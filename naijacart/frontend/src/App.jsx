@@ -5,13 +5,23 @@ import Navbar from './components/Navbar';
 import Home from './pages/Home';
 
 // Simple placeholder pages
-const SimpleShop = () => (
-  <div style={{ padding: '50px', textAlign: 'center' }}>
-    <h1 style={{ color: '#008751' }}>🛍️ Shop</h1>
-    <p>Shop page coming soon!</p>
-    <p>Browse our amazing Nigerian products.</p>
-  </div>
-);
+const SimpleShop = () => {
+  console.log('Shop page rendered');
+  return (
+    <div style={{ padding: '50px', textAlign: 'center', background: '#f9f9f9', minHeight: '400px' }}>
+      <h1 style={{ color: '#008751', fontSize: '32px', marginBottom: '20px' }}>🛍️ Shop</h1>
+      <p style={{ fontSize: '18px', marginBottom: '10px' }}>Shop page is working!</p>
+      <p style={{ color: '#666' }}>Browse our amazing Nigerian products.</p>
+      <div style={{ marginTop: '30px' }}>
+        <div style={{ display: 'inline-block', background: 'white', padding: '20px', borderRadius: '10px', boxShadow: '0 2px 8px rgba(0,0,0,0.1)' }}>
+          <p>🥘 Food & Groceries</p>
+          <p>👗 Fashion</p>
+          <p>📱 Electronics</p>
+        </div>
+      </div>
+    </div>
+  );
+};
 
 const SimpleLogin = () => (
   <div style={{ padding: '50px', textAlign: 'center' }}>
@@ -51,6 +61,7 @@ export default function App() {
             <Routes>
               <Route path="/" element={<Home />} />
               <Route path="/shop" element={<SimpleShop />} />
+              <Route path="/shop/*" element={<SimpleShop />} />
               <Route path="/login" element={<SimpleLogin />} />
               <Route path="/register" element={<SimpleLogin />} />
               <Route path="/cart" element={<SimpleCart />} />
