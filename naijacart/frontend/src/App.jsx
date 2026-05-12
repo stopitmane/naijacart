@@ -2,16 +2,7 @@ import { Routes, Route } from 'react-router-dom';
 import { AuthProvider } from './context/AuthContext';
 import { CartProvider } from './context/CartContext';
 import Navbar from './components/Navbar';
-
-// Simple fallback components
-const SimpleHome = () => (
-  <div style={{ padding: '50px', textAlign: 'center' }}>
-    <h1 style={{ color: '#008751' }}>🛒 NaijaCart</h1>
-    <p>Nigerian E-Commerce Platform</p>
-    <p>Home page loaded successfully!</p>
-    <p>Real Navbar is now loaded!</p>
-  </div>
-);
+import Home from './pages/Home';
 
 const SimpleFooter = () => (
   <footer style={{ background: '#1F2937', color: 'white', padding: '20px', textAlign: 'center' }}>
@@ -27,7 +18,7 @@ export default function App() {
           <Navbar />
           <main style={{ flex: 1 }}>
             <Routes>
-              <Route path="/" element={<SimpleHome />} />
+              <Route path="/" element={<Home />} />
               <Route path="*" element={
                 <div style={{ textAlign: 'center', padding: '100px 20px' }}>
                   <p style={{ fontSize: 64 }}>🔍</p>
