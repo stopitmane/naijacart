@@ -17,7 +17,49 @@ export default function Home() {
   const navigate = useNavigate();
 
   useEffect(() => {
-    productAPI.getFeatured().then(r => setFeatured(r.data.data)).catch(() => {}).finally(() => setLoading(false));
+    productAPI.getFeatured()
+      .then(r => setFeatured(r.data.data))
+      .catch(err => {
+        console.log('API not available, using demo mode');
+        // Demo products for when backend is not available
+        setFeatured([
+          { 
+            id: 1, 
+            name: 'Ofada Rice (5kg)', 
+            price: 8500, 
+            image: 'https://via.placeholder.com/300x200/008751/ffffff?text=Ofada+Rice', 
+            rating: 4.8, 
+            reviews: 245,
+            category: 'Food & Groceries',
+            seller: 'Lagos Farms',
+            badge: 'Local'
+          },
+          { 
+            id: 2, 
+            name: 'Ankara Dress', 
+            price: 15000, 
+            originalPrice: 18000,
+            image: 'https://via.placeholder.com/300x200/008751/ffffff?text=Ankara+Dress', 
+            rating: 4.9, 
+            reviews: 89,
+            category: 'Fashion',
+            seller: 'Naija Styles',
+            badge: 'Handmade'
+          },
+          { 
+            id: 3, 
+            name: 'Palm Oil (1L)', 
+            price: 2500, 
+            image: 'https://via.placeholder.com/300x200/008751/ffffff?text=Palm+Oil', 
+            rating: 4.7, 
+            reviews: 156,
+            category: 'Food & Groceries',
+            seller: 'Fresh Oils Ltd',
+            badge: 'Natural'
+          }
+        ]);
+      })
+      .finally(() => setLoading(false));
   }, []);
 
   return (
