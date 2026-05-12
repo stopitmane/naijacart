@@ -189,8 +189,30 @@ const SimpleCart = () => (
 );
 
 const SimpleFooter = () => (
-  <footer style={{ background: '#1F2937', color: 'white', padding: '20px', textAlign: 'center' }}>
-    <p>© 2026 NaijaCart</p>
+  <footer style={{ background: '#1F2937', color: 'white', padding: '40px 20px 20px' }}>
+    <div style={{ maxWidth: '1200px', margin: '0 auto', textAlign: 'center' }}>
+      <div style={{ marginBottom: '20px' }}>
+        <h3 style={{ color: '#FCD34D', fontSize: '24px', fontWeight: '800', marginBottom: '10px' }}>
+          🛒 NaijaCart
+        </h3>
+        <p style={{ color: '#9CA3AF', fontSize: '14px', marginBottom: '20px' }}>
+          Nigeria's premier online marketplace for authentic local products
+        </p>
+      </div>
+      
+      <div style={{ display: 'flex', justifyContent: 'center', gap: '30px', flexWrap: 'wrap', marginBottom: '20px', fontSize: '14px' }}>
+        <a href="#" style={{ color: '#9CA3AF', textDecoration: 'none' }}>About Us</a>
+        <a href="#" style={{ color: '#9CA3AF', textDecoration: 'none' }}>Contact</a>
+        <a href="#" style={{ color: '#9CA3AF', textDecoration: 'none' }}>Privacy Policy</a>
+        <a href="#" style={{ color: '#9CA3AF', textDecoration: 'none' }}>Terms of Service</a>
+      </div>
+      
+      <div style={{ borderTop: '1px solid #374151', paddingTop: '20px' }}>
+        <p style={{ color: '#6B7280', fontSize: '12px' }}>
+          © 2026 NaijaCart. All rights reserved. Made with ❤️ for Nigeria.
+        </p>
+      </div>
+    </div>
   </footer>
 );
 
