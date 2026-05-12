@@ -1,6 +1,6 @@
 import { useState, useEffect } from 'react';
 import { Link, useNavigate } from 'react-router-dom';
-import ProductCard from '../components/ProductCard';
+// import ProductCard from '../components/ProductCard';
 import { productAPI } from '../hooks/api';
 
 const categories = [
@@ -10,6 +10,45 @@ const categories = [
   { name: 'Beauty & Health', icon: '💄', color: '#FDE68A' },
   { name: 'Home & Kitchen', icon: '🏠', color: '#D1FAE5' },
 ];
+
+// Simple ProductCard replacement to avoid crashes
+const SimpleProductCard = ({ product }) => (
+  <div style={{ 
+    background: 'white', 
+    borderRadius: 12, 
+    padding: 16, 
+    boxShadow: '0 2px 8px rgba(0,0,0,0.06)',
+    textAlign: 'center'
+  }}>
+    <div style={{ 
+      background: '#008751', 
+      color: 'white', 
+      height: 120, 
+      borderRadius: 8, 
+      display: 'flex', 
+      alignItems: 'center', 
+      justifyContent: 'center',
+      marginBottom: 12,
+      fontSize: 24
+    }}>
+      📦
+    </div>
+    <h3 style={{ fontSize: 14, fontWeight: 600, marginBottom: 8 }}>{product.name}</h3>
+    <p style={{ color: '#008751', fontWeight: 700 }}>₦{product.price.toLocaleString()}</p>
+    <button style={{ 
+      background: '#008751', 
+      color: 'white', 
+      border: 'none', 
+      padding: '8px 16px', 
+      borderRadius: 6, 
+      fontSize: 12, 
+      marginTop: 8,
+      cursor: 'pointer'
+    }}>
+      Add to Cart
+    </button>
+  </div>
+);
 
 export default function Home() {
   const [featured, setFeatured] = useState([]);
@@ -87,17 +126,6 @@ export default function Home() {
               Browse Food
             </Link>
           </div>
-          <div style={{ display: 'flex', gap: 32, marginTop: 48, flexWrap: 'wrap' }}>
-            {[['🚚', 'Fast Delivery', 'Lagos & beyond'], ['🔒', 'Secure Payment', 'Paystack & bank'], ['⭐', '4.8/5 Rating', 'From 10k+ buyers']].map(([icon, title, sub]) => (
-              <div key={title} style={{ display: 'flex', alignItems: 'center', gap: 10 }}>
-                <span style={{ fontSize: 24 }}>{icon}</span>
-                <div>
-                  <p style={{ fontWeight: 700, fontSize: 14, margin: 0 }}>{title}</p>
-                  <p style={{ fontSize: 12, opacity: 0.7, margin: 0 }}>{sub}</p>
-                </div>
-              </div>
-            ))}
-          </div>
         </div>
       </section>
 
@@ -131,10 +159,13 @@ export default function Home() {
             <Link to="/shop" style={{ color: '#008751', fontWeight: 700, fontSize: 14 }}>View All →</Link>
           </div>
           {loading ? (
-            <div className="page-loader"><div className="spinner" /></div>
+            <div style={{ textAlign: 'center', padding: '40px' }}>
+              <div style={{ display: 'inline-block', width: 40, height: 40, border: '4px solid #f3f3f3', borderTop: '4px solid #008751', borderRadius: '50%', animation: 'spin 1s linear infinite' }}>
+              </div>
+            </div>
           ) : (
             <div style={{ display: 'grid', gridTemplateColumns: 'repeat(auto-fill, minmax(230px, 1fr))', gap: 20 }}>
-              {featured.map(p => <ProductCard key={p.id} product={p} />)}
+              {featured.map(p => <SimpleProductCard key={p.id} product={p} />)}
             </div>
           )}
         </div>
