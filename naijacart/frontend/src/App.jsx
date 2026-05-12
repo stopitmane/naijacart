@@ -4,6 +4,37 @@ import { CartProvider } from './context/CartContext';
 import Navbar from './components/Navbar';
 import Home from './pages/Home';
 
+// Simple placeholder pages
+const SimpleShop = () => (
+  <div style={{ padding: '50px', textAlign: 'center' }}>
+    <h1 style={{ color: '#008751' }}>🛍️ Shop</h1>
+    <p>Shop page coming soon!</p>
+    <p>Browse our amazing Nigerian products.</p>
+  </div>
+);
+
+const SimpleLogin = () => (
+  <div style={{ padding: '50px', textAlign: 'center' }}>
+    <h1 style={{ color: '#008751' }}>🔐 Login</h1>
+    <p>Login page coming soon!</p>
+    <div style={{ maxWidth: 300, margin: '20px auto', textAlign: 'left' }}>
+      <input placeholder="Email" style={{ width: '100%', padding: '10px', marginBottom: '10px', border: '1px solid #ddd', borderRadius: '5px' }} />
+      <input placeholder="Password" type="password" style={{ width: '100%', padding: '10px', marginBottom: '10px', border: '1px solid #ddd', borderRadius: '5px' }} />
+      <button style={{ width: '100%', padding: '10px', background: '#008751', color: 'white', border: 'none', borderRadius: '5px', cursor: 'pointer' }}>
+        Login
+      </button>
+    </div>
+  </div>
+);
+
+const SimpleCart = () => (
+  <div style={{ padding: '50px', textAlign: 'center' }}>
+    <h1 style={{ color: '#008751' }}>🛒 Cart</h1>
+    <p>Your cart is empty</p>
+    <p>Add some products to get started!</p>
+  </div>
+);
+
 const SimpleFooter = () => (
   <footer style={{ background: '#1F2937', color: 'white', padding: '20px', textAlign: 'center' }}>
     <p>© 2026 NaijaCart</p>
@@ -19,6 +50,10 @@ export default function App() {
           <main style={{ flex: 1 }}>
             <Routes>
               <Route path="/" element={<Home />} />
+              <Route path="/shop" element={<SimpleShop />} />
+              <Route path="/login" element={<SimpleLogin />} />
+              <Route path="/register" element={<SimpleLogin />} />
+              <Route path="/cart" element={<SimpleCart />} />
               <Route path="*" element={
                 <div style={{ textAlign: 'center', padding: '100px 20px' }}>
                   <p style={{ fontSize: 64 }}>🔍</p>
