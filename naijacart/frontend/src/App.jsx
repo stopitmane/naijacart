@@ -1,33 +1,37 @@
 import { Routes, Route } from 'react-router-dom';
 import { AuthProvider } from './context/AuthContext';
 import { CartProvider } from './context/CartContext';
-import Navbar from './components/Navbar';
-import Footer from './components/Footer';
-import Home from './pages/Home';
-import Shop from './pages/Shop';
-import ProductDetail from './pages/ProductDetail';
-import Cart from './pages/Cart';
-import Checkout from './pages/Checkout';
-import { Login, Register } from './pages/Auth';
-import { OrdersList, OrderDetail } from './pages/Orders';
+
+// Simple fallback components
+const SimpleHome = () => (
+  <div style={{ padding: '50px', textAlign: 'center' }}>
+    <h1 style={{ color: '#008751' }}>🛒 NaijaCart</h1>
+    <p>Nigerian E-Commerce Platform</p>
+    <p>Home page loaded successfully!</p>
+  </div>
+);
+
+const SimpleNavbar = () => (
+  <nav style={{ background: '#008751', color: 'white', padding: '15px 20px' }}>
+    <h2>NaijaCart</h2>
+  </nav>
+);
+
+const SimpleFooter = () => (
+  <footer style={{ background: '#1F2937', color: 'white', padding: '20px', textAlign: 'center' }}>
+    <p>© 2026 NaijaCart</p>
+  </footer>
+);
 
 export default function App() {
   return (
     <AuthProvider>
       <CartProvider>
         <div style={{ display: 'flex', flexDirection: 'column', minHeight: '100vh' }}>
-          <Navbar />
+          <SimpleNavbar />
           <main style={{ flex: 1 }}>
             <Routes>
-              <Route path="/" element={<Home />} />
-              <Route path="/shop" element={<Shop />} />
-              <Route path="/product/:id" element={<ProductDetail />} />
-              <Route path="/cart" element={<Cart />} />
-              <Route path="/checkout" element={<Checkout />} />
-              <Route path="/login" element={<Login />} />
-              <Route path="/register" element={<Register />} />
-              <Route path="/orders" element={<OrdersList />} />
-              <Route path="/orders/:id" element={<OrderDetail />} />
+              <Route path="/" element={<SimpleHome />} />
               <Route path="*" element={
                 <div style={{ textAlign: 'center', padding: '100px 20px' }}>
                   <p style={{ fontSize: 64 }}>🔍</p>
@@ -37,7 +41,7 @@ export default function App() {
               } />
             </Routes>
           </main>
-          <Footer />
+          <SimpleFooter />
         </div>
       </CartProvider>
     </AuthProvider>
